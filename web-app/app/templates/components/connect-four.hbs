@@ -1,0 +1,32 @@
+{{!--   This connect-four.hbs is used to set out the states of the game and what should
+  and should not be shown:
+  - the first if statments make sure within the connect-four.js the state is
+  changed to Playing
+  - when the win is found the state is passed back and goes through if statments
+  to check with line needs to be shown
+  - desktop used to determine which buttons needs to be visuable and not
+  - the last part is to se the size of the canvas which is the app
+
+--}}
+
+{{#if playing}}
+  {{#if winner}}
+    <div>
+      {{winner}} won!
+    </div>
+  {{/if}}
+
+  {{#if draw}}
+        <div>we'll call it a draw</div>
+  {{/if}}
+  {{#if desktop}}
+  <button {{action 'start'}}>restart</button>
+  {{/if}}
+  {{else}}
+    {{#if desktop}}
+      <button {{action 'start'}}>Start</button>
+    {{/if}}
+  {{/if}}
+
+
+<canvas id="stage" width="380" height="380"></canvas>

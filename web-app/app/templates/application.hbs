@@ -1,0 +1,21 @@
+{{!--
+  Application.hbs:
+  - Is used to set out the look of the application
+  - The header sets a link to the game.hbs where the link to the template_component is
+  - With the links is a text to show what the game is called
+  - Outlet is used to tell the app where to run the code in the app_componenets, which
+  indicates where the 4 by 4 grid will be placed.
+ --}}
+<section id="app">
+  <header>
+    <h1>{{#link-to 'game'}}Connect Four{{/link-to}}</h1>
+  </header>
+  <article>
+    {{outlet}}
+  </article>
+  <footer>
+    <div class="float-left">
+      Powered by Ember, shake to start and restart the game
+    </div>
+  </footer>
+</section>
